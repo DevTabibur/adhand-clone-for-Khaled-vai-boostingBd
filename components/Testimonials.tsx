@@ -121,7 +121,7 @@ export const Testimonials = () => {
   const currentTestimonial = testimonials[currentIndex]
 
   return (
-    <section className="py-20 bg-white dark:bg-gray-900 relative overflow-hidden">
+    <section className="py-20 bg-white dark:bg-gray-900 relative overflow-hidden" id="testimonials">
       {/* Background decoration */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-20 left-20 w-80 h-80 bg-gradient-to-r from-green-400/10 to-cyan-400/10 rounded-full filter blur-3xl"></div>
