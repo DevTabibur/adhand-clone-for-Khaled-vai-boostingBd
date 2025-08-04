@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useLanguage } from "../hooks/useLanguage";
+import JoiningMail from "./JoiningTheMail";
 
 export const Footer = () => {
   const { t, isRTL } = useLanguage();
@@ -30,9 +31,10 @@ export const Footer = () => {
   return (
     <footer className="bg-gray-50 dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8">
+        {/* Responsive 4-column grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Logo and description */}
-          <div className="lg:col-span-2">
+          <div>
             <div className="flex items-center mb-4">
               <div className="w-8 h-8 bg-gradient-to-r from-green-500 to-cyan-500 rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-lg">A</span>
@@ -50,6 +52,7 @@ export const Footer = () => {
               <a
                 href="#"
                 className="text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 transition-colors duration-200"
+                aria-label="Twitter"
               >
                 <svg
                   className="w-6 h-6"
@@ -62,6 +65,7 @@ export const Footer = () => {
               <a
                 href="#"
                 className="text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 transition-colors duration-200"
+                aria-label="Facebook"
               >
                 <svg
                   className="w-6 h-6"
@@ -74,6 +78,7 @@ export const Footer = () => {
               <a
                 href="#"
                 className="text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 transition-colors duration-200"
+                aria-label="LinkedIn"
               >
                 <svg
                   className="w-6 h-6"
@@ -84,64 +89,91 @@ export const Footer = () => {
                 </svg>
               </a>
             </div>
+            <div className="mt-12 pt-8 border-t border-gray-200 dark:border-gray-800 hidden md:block">
+              <div className="flex flex-col md:flex-row justify-between items-center">
+                <p className="text-gray-600 dark:text-gray-400 text-sm">
+                  © 2024 AdHand. All rights reserved.
+                </p>
+                
+              </div>
+            </div>
           </div>
 
-          {/* Footer sections */}
-          {footerSections.map((section, index) => (
-            <div key={section.title} className="lg:col-span-1">
-              <h3 className="text-sm font-semibold text-gray-900 dark:text-white uppercase tracking-wider mb-4">
-                {section.title}
-              </h3>
-              <ul className="space-y-3">
-                {section.links.map((link: any) => {
-                  // Support both string and object link definitions
-                  let href: string | undefined;
-                  let label: string;
-                  if (typeof link === "string") {
-                    href = link;
-                    label = link;
-                  } else if (typeof link === "object" && link !== null) {
-                    href = link.href || link.hrefs || "#";
-                    label = link.label || link.text || link.title || href;
-                  } else {
-                    href = "#";
-                    label = "Link";
-                  }
-                  return (
-                    <li key={label + href}>
-                      <Link
-                        href={href}
-                        className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors duration-200"
-                      >
-                        {label}
-                      </Link>
-                    </li>
-                  );
-                })}
-              </ul>
-            </div>
-          ))}
+          {/* Company section */}
+          <div>
+            <h3 className="text-sm font-semibold text-gray-900 dark:text-white uppercase tracking-wider mb-4">
+              {footerSections[0].title}
+            </h3>
+            <ul className="space-y-3">
+              {footerSections[0].links.map((link: any) => {
+                let href: string | undefined;
+                let label: string;
+                if (typeof link === "string") {
+                  href = link;
+                  label = link;
+                } else if (typeof link === "object" && link !== null) {
+                  href = link.href || link.hrefs || "#";
+                  label = link.label || link.text || link.title || href;
+                } else {
+                  href = "#";
+                  label = "Link";
+                }
+                return (
+                  <li key={label + href}>
+                    <Link
+                      href={href as any}
+                      className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors duration-200"
+                    >
+                      {label}
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+
+          {/* Legal section */}
+          <div>
+            <h3 className="text-sm font-semibold text-gray-900 dark:text-white uppercase tracking-wider mb-4">
+              {footerSections[1].title}
+            </h3>
+            <ul className="space-y-3">
+              {footerSections[1].links.map((link: any) => {
+                let href: string | undefined;
+                let label: string;
+                if (typeof link === "string") {
+                  href = link;
+                  label = link;
+                } else if (typeof link === "object" && link !== null) {
+                  href = link.href || link.hrefs || "#";
+                  label = link.label || link.text || link.title || href;
+                } else {
+                  href = "#";
+                  label = "Link";
+                }
+                return (
+                  <li key={label + href}>
+                    <Link
+                      href={href as any}
+                      className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors duration-200"
+                    >
+                      {label}
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+
+          
+          <JoiningMail />
         </div>
 
-        <div className="mt-12 pt-8 border-t border-gray-200 dark:border-gray-800">
+        <div className="mt-12 pt-8 border-t border-gray-200 dark:border-gray-800 md:hidden block">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-600 dark:text-gray-400 text-sm">
               © 2024 AdHand. All rights reserved.
             </p>
-            <div className="flex space-x-6 mt-4 md:mt-0">
-              <a
-                href="#"
-                className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white text-sm transition-colors duration-200"
-              >
-                Privacy Policy
-              </a>
-              <a
-                href="#"
-                className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white text-sm transition-colors duration-200"
-              >
-                Terms of Service
-              </a>
-            </div>
           </div>
         </div>
       </div>

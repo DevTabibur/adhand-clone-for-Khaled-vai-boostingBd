@@ -11,7 +11,6 @@ import { AboutAdHand } from "../components/AboutAdHand"
 import { Testimonials } from "../components/Testimonials"
 import { HowItWorks } from "../components/HowItWorks"
 import { useLanguage } from "../hooks/useLanguage"
-import BookSellPage from "@/components/book"
 
 export default function Home() {
   const { t } = useLanguage()
@@ -28,9 +27,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <BookSellPage />
-
-      {/* <Layout>
+      <Layout>
         <Hero />
         <TrustedBy />
         <PlatformShowcase />
@@ -39,7 +36,7 @@ export default function Home() {
         <AboutAdHand />
         <Testimonials />
         <HowItWorks />
-      </Layout> */}
+      </Layout>
     </>
   )
 }
