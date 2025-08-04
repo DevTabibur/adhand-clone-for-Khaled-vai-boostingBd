@@ -72,12 +72,12 @@ const pulseVariants: any = {
   },
 }
 
-export default function FreelancersPage() {
+export default function AdvertisersPage() {
   // const { language } = useLanguage()
   // const t = translations[language]
 
   const stats = [
-    { icon: Users, value: "10K+", label: "Active Freelancers", color: "text-emerald-400" },
+    { icon: Users, value: "10K+", label: "Active Advertisers", color: "text-emerald-400" },
     { icon: TrendingUp, value: "300%", label: "Average ROI", color: "text-cyan-400" },
     { icon: DollarSign, value: "$2M+", label: "Revenue Generated", color: "text-yellow-400" },
     { icon: Clock, value: "24/7", label: "Support Available", color: "text-orange-400" },
@@ -217,7 +217,7 @@ export default function FreelancersPage() {
                 >
                   <Briefcase className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
                   <span className="text-sm font-medium text-emerald-700 dark:text-emerald-300">
-                    For Freelancers & Agencies
+                    For Advertisers & Agencies
                   </span>
                 </motion.div>
 
@@ -238,7 +238,7 @@ export default function FreelancersPage() {
                   variants={itemVariants}
                 >
                   Stop chasing clients. Let them find you with our proven advertising strategies that have helped
-                  10,000+ freelancers grow their business by 300% on average.
+                  10,000+ Advertisers grow their business by 300% on average.
                 </motion.p>
 
                 <motion.div className="flex flex-col sm:flex-row gap-4" variants={itemVariants}>
@@ -266,7 +266,7 @@ export default function FreelancersPage() {
                       <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
                     ))}
                   </div>
-                  <span className="text-slate-600 dark:text-slate-400">4.9/5 from 2,500+ freelancers</span>
+                  <span className="text-slate-600 dark:text-slate-400">4.9/5 from 2,500+ Advertisers</span>
                 </motion.div>
               </motion.div>
 
@@ -373,14 +373,14 @@ export default function FreelancersPage() {
           <div className="container mx-auto px-4">
             <motion.div className="text-center mb-16" variants={itemVariants}>
               <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 dark:text-white mb-6">
-                Why Freelancers Choose
+                Why Advertisers Choose
                 <span className="bg-gradient-to-r from-emerald-600 to-cyan-600 bg-clip-text text-transparent">
                   {" "}
                   AdHand
                 </span>
               </h2>
               <p className="text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto">
-                Join thousands of successful freelancers who've transformed their business with our proven advertising
+                Join thousands of successful Advertisers who've transformed their business with our proven advertising
                 solutions
               </p>
             </motion.div>
@@ -515,7 +515,7 @@ export default function FreelancersPage() {
                 Success Stories from
                 <span className="bg-gradient-to-r from-emerald-600 to-cyan-600 bg-clip-text text-transparent">
                   {" "}
-                  Real Freelancers
+                  Real Advertisers
                 </span>
               </h2>
               <p className="text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto">
@@ -644,7 +644,7 @@ export default function FreelancersPage() {
               </h2>
 
               <p className="text-xl text-white/90 mb-8 leading-relaxed">
-                Join 10,000+ successful freelancers who've transformed their business with AdHand. Get your first
+                Join 10,000+ successful Advertisers who've transformed their business with AdHand. Get your first
                 campaign running in 24 hours with our expert team.
               </p>
 

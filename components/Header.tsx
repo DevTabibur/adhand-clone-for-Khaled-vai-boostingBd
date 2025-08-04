@@ -13,9 +13,9 @@ export const Header = () => {
   const [isPlatformsOpen, setIsPlatformsOpen] = useState(false);
 
   const navItems = [
-    { key: "freelancers", href: "freelancers" },
-    { key: "testimonials", href: "#testimonials" },
-    { key: "blog", href: "blog" },
+    { key: "Advertisers", href: "advertisers" },
+    { key: "Testimonials", href: "#testimonials" },
+    { key: "Blog", href: "blog" },
   ];
 
   const platforms = [
@@ -232,7 +232,8 @@ export const Header = () => {
                 href={item.href}
                 className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors duration-200 font-medium"
               >
-                {t(`nav.${item.key}`)}
+                {/* {t(`nav.${item.key}`)} */}
+                {item.key}
               </a>
             ))}
           </nav>
